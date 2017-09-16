@@ -15,3 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/getfirsttable', 'AuthController@getfirsttable');
+Route::get('/testsql', 'BuroController@testSql');
+Route::get('/testobject', 'BuroController@testRelateObject');
+Route::get('/testerror', 'BuroController@testException');
+
