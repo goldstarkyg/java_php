@@ -8,45 +8,16 @@ use Illuminate\Http\Request;
 
 use DB;
 use Response;
+use Log;
 
 class BuroPFImplController extends Controller
 {
    /*
     * TEST
-    */
-    public function consulta($conn, $solicitante, $noEtapa, $valorEtapa, $ProductoRequerido, $TipoCuenta, $ClaveUnidadMonetaria, $ImporteContrato, $usuario_id_sol, $usuario_id_aut, $computadora, $confirma, $sucursal) {
-        return '';
-    }
+    */   
 
-    public  function testObject(){
-        $test = array();
-        //echo "This is test object";
-        $test['name'] = 'tttttttt';
-        return Response::json($test);
-    }
-
-//    function socketTest() {
-//        $fp = fsockopen($host, $port, $errno, $errstr);
-//        if (!$fp) {
-//            echo "$errstr ($errno)<br>\n";
-//        } else {
-//            $out = "$method $path HTTP/1.1\r\n";
-//            $out .= "Host: $host\r\n";
-//            $out .= "User-Agent: " . $_SERVER['HTTP_USER_AGENT'] . "\r\n";
-//            $out .= "Content-type: application/x-www-form-urlencoded\r\n";
-//            $out .= "Content-length: " . strlen($data) . "\r\n";
-//            $out .= "Connection: close\r\n\r\n";
-//            $out .= "$data\r\n\r\n";
-//            fwrite($fp, $out);
-//            while (!feof($fp)) {
-//                $line = fgets($fp, 1024);
-//                $buffer .= $line;
-//            }
-//            fclose($fp);
-//        }
-//    }
     //////////////////////////////////////////////////////////////
-    
+
     public $iFolioid = 0 ;
     /*
      * consultac
@@ -54,80 +25,83 @@ class BuroPFImplController extends Controller
     public function consulta($conn, $Solicitante, $noEtapa , $valorEtapa, $ProductoRequerido, $TipoCuenta,
                     $ClaveUnidadMonetaria, $ImporteContrato, $usuario_id_sol, $usuario_id_aut,
                     $computadora, $confirma, $sucursal) {
-       $int folio = -1;
+       $folio = -1;
        $xConsulta = "";
        $out = null; //DataOutputStream out = null;
-       $in = null; //DataInputStream in = null;
+       $in = null ; //DataInputStream in = null;
         
-       //Logger.getAnonymousLogger().info(Solicitante);
-       $buroSocket; //Socket buroSocket;
+       Log::info($Solicitante);
+       $buroSocket = ''; //Socket buroSocket;
        $xrespuestaBuro  = "";
 
        try {
            try{
 
-               $sqldatos = "select usuario_buro,contrasena_buro,servidor_buro,puerto_buro from cat_empresas where clave = " + sucursal;
-               $res = DB::select($sqldatos);
-               
-               $usuario = $res->usuario_buro;
-               $contrasena = $res ->contrasena_buro;
-               $host = $res ->servidor_buro;
-               $puerto = $res ->puerto_buro;
-               $puerto_buro_credito = (int)$puerto;
+//               $sqldatos = "select usuario_buro,contrasena_buro,servidor_buro,puerto_buro from cat_empresas where clave = " + sucursal;
+//               $res = DB::select($sqldatos);
+//               
+               $usuario = USUARIO;
+               $contrasena = CONTRASENA;
+               $host = HOST;
+               $puerto = PUERTO;
+               $puerto_buro_credito = PUEROTO_BURO_CREDITO;
 
                $xConsulta = $this->cadenaconsulta($Solicitante, (int)$ImporteContrato, $ProductoRequerido, $usuario, $contrasena);
                //Quitamos la letra � de la cadena de consulta para que no marque error en buro.
-               $xConsulta = str_replace("�", "N" , $xConsulta); 
+               $xConsulta = str_replace("Ñ", "N" , $xConsulta);
+               
 
                $fp = fsockopen($host, $puerto_buro_credito, $errno, $errstr);
+               $path = '/cms/test';
+               $buffer = '';
+               $method = "Get";
+               $data = "consulta=".$xConsulta;
+               $method = strtoupper($method);
+               if ($method = "GET") {
+                   $path .= '?' . $data;
+               }
                 if ($fp) {
                     $out = "$method $path HTTP/1.1\r\n";
                     $out .= "Host: $host\r\n";
                     $out .= "User-Agent: " . $_SERVER['HTTP_USER_AGENT'] . "\r\n";
                     $out .= "Content-type: application/x-www-form-urlencoded\r\n";
-                    $out .= "Content-length: " . strlen($xConsulta) . "\r\n";
+                    $out .= "Content-length: " . strlen($data) . "\r\n";
                     $out .= "Connection: close\r\n\r\n";
-                    $out .= "\u0013"; // add
-                    $out .= "\n"; //add
-                    $out .= "\n"; //add
-                    $out .= "$xConsulta\r\n\r\n";
+                    $out .= "$data\r\n\r\n";
                     
                     fwrite($fp, $out);
                     while (!feof($fp)) {
                         $line = fgets($fp, 1024);
                         $buffer .= $line;
                     }
-
                     fclose($fp);
                 }
-             
-               // Logger.getAnonymousLogger().info("lectura:" + xConsulta );
-               // System.out.println(xConsulta);
-               
-               //Logger.getAnonymousLogger().info(xConsulta);
-               
+               Log::info("lectura:" . $xConsulta);
+
+
                //$in = new DataInputStream( buroSocket.getInputStream() );
                    //$linea = "";
 
                $car = 0;
-               StringBuffer sb = new StringBuffer();
-               try {
-                   Logger.getAnonymousLogger().info("empieza lectura");
-                   while ( (car = in.read() ) >= 0 )  {
-                   if ( car == '\u0013')
-                   break;
+//               StringBuffer sb = new StringBuffer();
 
-                   sb.append((char)car);
-               }
-               } catch( \Exception $e ) {
-                   // Logger.getAnonymousLogger().info(e.toString());
-                   // for( int i=0; i!= e.getStackTrace().length; i++) {
-                   //     Logger.getAnonymousLogger().info(e.getStackTrace()[i].toString());
-                   // }
-
-               }
-               $xrespuestaBuro = $sb;
-               
+//               try {
+////                   Logger.getAnonymousLogger().info("empieza lectura");
+//                   while ( ($car = $in.read() ) >= 0 )  {
+//                   if ( car == '\u0013')
+//                   break;
+//
+//                   $sb.append((char)car);
+//               }
+//               } catch( \Exception $e ) {
+//                   // Logger.getAnonymousLogger().info(e.toString());
+//                   // for( int i=0; i!= e.getStackTrace().length; i++) {
+//                   //     Logger.getAnonymousLogger().info(e.getStackTrace()[i].toString());
+//                   // }
+//
+//               }
+               //$xrespuestaBuro = $sb;
+               $xrespuestaBuro = $buffer;
                //Logger.getAnonymousLogger().info("regreso "  +xrespuestaBuro);
                
                $folio = $this->inserta_tabla_consultacirculo($xConsulta, $xrespuestaBuro, $Solicitante, $noEtapa , $valorEtapa, 
@@ -135,20 +109,14 @@ class BuroPFImplController extends Controller
                             $computadora, $confirma, $sucursal);
            } catch(\Exception $se) {
                    $folio = -1;
-                   // Logger.getAnonymousLogger().info(se.toString());
-                   // for( int i=0; i!= se.getStackTrace().length; i++) {
-                   //     Logger.getAnonymousLogger().info(se.getStackTrace()[i].toString());
-                   // }
+                    Log::info($se);
                    $folio = $this->inserta_tabla_consultacirculo($se , $xrespuestaBuro, $Solicitante, $noEtapa , $valorEtapa, 
                                 $ProductoRequerido, $TipoCuenta, $ClaveUnidadMonetaria, $ImporteContrato, $usuario_id_sol, $usuario_id_aut, 
                                 $computadora, $confirma, $sucursal);
            }                           
        } catch( \Exception $se) {
                $folio = -1;
-               // Logger.getAnonymousLogger().info(se.toString());
-               // for( int i=0; i!= se.getStackTrace().length; i++) {
-               //     Logger.getAnonymousLogger().info(se.getStackTrace()[i].toString());
-               // }
+                Log::info($se);
                 $folio = $this->inserta_tabla_consultacirculo($se , $xrespuestaBuro, $Solicitante, $noEtapa , $valorEtapa, 
                                 $ProductoRequerido, $TipoCuenta, $ClaveUnidadMonetaria, $ImporteContrato, $usuario_id_sol, 
                                 $usuario_id_aut, $computadora, $confirma, $sucursal);
@@ -172,26 +140,26 @@ class BuroPFImplController extends Controller
 		$Error="";
 		$Err="";
 		$sTexto="";
-		$sValorn = "select respuestaxml from consultas_circulo where folioconsulta = '" + sfolio + "'";
+		$sValorn = "select respuestaxml from consultas_circulo where folioconsulta = '" . sfolio . "'";
 		try{
 
-            $sInsert = DB::delete("Delete from circulo_personas where folioconsultaotorgante = " + $sfolio);
-            $sInsert = DB::delete("Delete from circulo_domicilios where folioconsultaotorgante = " + $sfolio);
-            $sInsert = DB::delete("Delete from circulo_cuentas where folioconsultaotorgante = " + $sfolio);
-            $sInsert = DB::delete("Delete from circulo_empleos where folioconsultaotorgante = " + $sfolio);
-            $sInsert = DB::delete("Delete from circulo_consultas_efectuadas  where folioconsultaotorgante = " + sfolio);
+            $sInsert = DB::delete("Delete from circulo_personas where folioconsultaotorgante = " . $sfolio);
+            $sInsert = DB::delete("Delete from circulo_domicilios where folioconsultaotorgante = " . $sfolio);
+            $sInsert = DB::delete("Delete from circulo_cuentas where folioconsultaotorgante = " . $sfolio);
+            $sInsert = DB::delete("Delete from circulo_empleos where folioconsultaotorgante = " . $sfolio);
+            $sInsert = DB::delete("Delete from circulo_consultas_efectuadas  where folioconsultaotorgante = " . sfolio);
 
             $res2 = DB::select($sValorn);
 			$sTexto = reset($res2); //get first item
 
-			//Logger.getAnonymousLogger().info(sTexto);
+			Log::info($sTexto);
 			$par = (int) $sfolio;
-			//Logger.getAnonymousLogger().info(String.valueOf(par));
+			Log::info($par);
 			if($sTexto != "")
             {
                 $b1 = 0;
 				$longitud = $sTexto.length(); // confrim $or array
-				//Logger.getAnonymousLogger().info(String.valueOf(longitud));
+				Log::info($longitud);
 				if ($longitud > 0) {
                     $sINTL = substr($sTexto, 47, 48);
                     if ($longitud < 382) {
@@ -200,14 +168,14 @@ class BuroPFImplController extends Controller
                     else {
                         $sNombre = substr($sTexto, 49,384);	//NOMBRE
                     }
-                    //Logger.getAnonymousLogger().info("1");
+                    Log::info("1");
                     $b1 = $this->lee_nombre($sNombre, $par);
                     if($b1 < 0)
                     {
                         $Error = "NOMBRE";
                         $longitud = -1;
                     }
-                    //System.out.println("B1: "+String.valueOf(b1)+" Long: "+String.valueOf(longitud));
+
                     $b1 += 49;
                     if ($b1 < $longitud) {
                         do {
@@ -215,21 +183,18 @@ class BuroPFImplController extends Controller
                                 $sDireccion = substr($sTexto, $b1, $longitud);
                             }
                             else {
-                                //System.out.println("Longitud texto: " + String.valueOf(sTexto.length()));
                                 $sDireccion = substr($sTexto, $b1, $b1+315);
-                                //System.out.println("La cadena direcci�n es: " + sDireccion);
                             }
                             $b1 += $this->lee_dir($sDireccion, $par);
                             $xEtiq = substr($sTexto, $b1, $b1+2);
                         } while ( $xEtiq  =="PA" && $b1 != -1);
                         if($b1 < 0)
                         {
-                            $Error += ", DIRECCION";
+                            $Error .= ", DIRECCION";
                             $idr = $longitud = -1;
                         }
                     }
                     if ($b1 < $longitud) {
-                        //System.out.println("Empleo B1: " + String.valueOf(b1)+ " Long: " + String.valueOf(longitud));
                         do {
                             if ($longitud < ($b1+453)) {
                                 $sEmpleo = substr($sTexto, $b1,$longitud);
@@ -243,7 +208,6 @@ class BuroPFImplController extends Controller
                                 {
                                     $sEmpleo = substr($sTexto , $b1, $longitud);
                                 }
-                                //System.out.println("La cadena de empleo es: " + sEmpleo);
                             }
                             $b1 += $this->lee_empleo($sEmpleo, $par);
                             $xEtiq = substr($sTexto, $b1, $b1+2);
@@ -254,23 +218,19 @@ class BuroPFImplController extends Controller
                             $Error = ", EMPLEO";
                             $idr = $longitud += -1;
                         }
-                        //System.out.println("Salio del segmento de empleo, con B1 en: " + b1);
                     }
                     if ($b1 < $longitud) {
-                        //System.out.println("Entra al segmento de cuentas, con B1 en: " + b1 +" y Longitud en: " + longitud);
+
                         do {
                             if ($longitud < ($b1+478)) {
                                 $sCuentas = substr($sTexto, $b1,$longitud);
-                                //System.out.println("La cadena de cuentas es: " + sCuentas);
                             }
                             else {
 
-                                //sCuentas = sTexto.substring(b1,b1+480);
                                 if 	($longitud < ($b1+480))
                                     $sCuentas = substr($sTexto, $b1,$longitud);
                                 else
                                     $sCuentas = substr($sTexto, $b1, $b1+480);
-                                //System.out.println("La cadena de cuentas es: " + sCuentas);
                             }
                             $b1 += $this->lee_cuentas($sCuentas, $par);
                             $xEtiq = substr($sTexto, $b1, $b1+2);
@@ -278,7 +238,7 @@ class BuroPFImplController extends Controller
                         } while ( $xEtiq == "TL" && $b1 != -1);
                         if($b1 < 0)
                         {
-                            $Error += ", CUENTAS";
+                            $Error .= ", CUENTAS";
                             $idr = $longitud = -1;
                         }
 
@@ -287,11 +247,9 @@ class BuroPFImplController extends Controller
                         do {
                             if ($longitud < ($b1+133)) {
                                 $sCuentas = substr($sTexto, $b1,$longitud);
-                                //System.out.println("La cadena de consultas es: " + sCuentas);
                             }
                             else {
                                 $sCuentas = substr($sTexto , $b1, $b1+135);
-                                //System.out.println("La cadena de consultas es: " + sCuentas);
                             }
                             $b1 += $this->lee_consultas($sCuentas, $par);
                             $xEtiq = substr($sTexto, $b1, $b1+2);
@@ -305,59 +263,44 @@ class BuroPFImplController extends Controller
                 }
 				if($idr==-1)
                 {
-                    $Err = "ERROR DE INTERPRETACION DE SEGMENTO(S): " + Error;
+                    $Err = "ERROR DE INTERPRETACION DE SEGMENTO(S): " . Error;
 				}
 			}
 		} catch(\Exception $e) {
-           // Logger.getAnonymousLogger().info(e.toString());
-           // for( int i=0; i!= e.getStackTrace().length; i++) {
-           //     Logger.getAnonymousLogger().info(e.getStackTrace()[i].toString());
-           // }
+            Log::info($e);
                 $idr = -1;
-                $Err += e.toString();
+                $Err .= e.toString();
 		}
 		if($idr == -1)
         {
-            $sInsert = DB::update("Update consultas_circulo set error = '" + $Err + "' , fecha_creacion = CURRENT_TIMESTAMP where folioconsulta = " + $sfolio);
+            $sInsert = DB::update("Update consultas_circulo set error = '" . $Err . "' , fecha_creacion = CURRENT_TIMESTAMP where folioconsulta = " . $sfolio);
 
 		    try{
-                //Logger.getAnonymousLogger().info(sInsert);
+                Log::info($sInsert);
             } catch(\Exception $e) {
-               // Logger.getAnonymousLogger().info(e.toString());
-               // for( int i=0; i!= e.getStackTrace().length; i++) {
-               //     Logger.getAnonymousLogger().info(e.getStackTrace()[i].toString());
-               // }
+               Log::info($e);
             }
 		}
         else
         {
-            //Logger.getAnonymousLogger().info(sValorn);
+            Log::info($sValorn);
             $numc = $this->lee_fin($sTexto);
-			$sInsert2 = "Update consultas_circulo set control = '" + $numc + "' , cuenta_buro = "+ $numc +" , fecha_creacion = CURRENT_TIMESTAMP where folioconsulta = " + $sfolio ;
+			$sInsert2 = "Update consultas_circulo set control = '" . $numc . "' , cuenta_buro = ". $numc ." , fecha_creacion = CURRENT_TIMESTAMP where folioconsulta = " . $sfolio ;
             $sInsert2 = DB::update($sInsert2);
 			try{
-                //System.out.println("control , " + sInsert2);
-                //Logger.getAnonymousLogger().info(sInsert2);
+                Log::info($sInsert2);
             }
             catch(\Exception $e){
-               // Logger.getAnonymousLogger().info(e.toString());
-               // for( int i=0; i!= e.getStackTrace().length; i++) {
-               //     Logger.getAnonymousLogger().info(e.getStackTrace()[i].toString());
-               // }
+               Log::info($e);
 			}
 
-			$sInsert2 = "select buro_califica_cuentas(" + $sfolio +")";
+			$sInsert2 = "select buro_califica_cuentas(" . $sfolio .")";
 			try{
                 $sInsert2 = DB::select($sInsert2);
-                //System.out.println("control , " + sInsert2);
-                //gger.getAnonymousLogger().info(sInsert2);
+                Log::info($sInsert2);
             }
             catch(\Exception $e){
-                //Logger.getAnonymousLogger().info(e.toString());
-                // for( int i=0; i!= e.getStackTrace().length; i++) {
-                //     Logger.getAnonymousLogger().info(e.getStackTrace()[i].toString());
-                // }
-
+                Log::info($e);
 			}
 		}
 
@@ -379,38 +322,26 @@ class BuroPFImplController extends Controller
 				$iFolioid = reset($res2); // get first item 
 
 			}catch(\Exception $e) {
-                //Logger.getAnonymousLogger().info(e.toString());
-                // for( int i=0; i!= e.getStackTrace().length; i++) {
-                //     Logger.getAnonymousLogger().info(e.getStackTrace()[i].toString());
-                // }
+                Log::info($e);
 				$iFolioid = -1;
 			}
 			
 			if($iFolioid != -1)
             {
-                java.util.regex.Pattern p = java.util.regex.Pattern.compile("'");
-				java.util.regex.Matcher m = p.matcher(res);
-				StringBuffer sb = new StringBuffer();
-				while (m.find()) {
-                    m.appendReplacement(sb, " ");
-                }
-				m.appendTail(sb);
-				res= sb.toString();
+                $pattern = "'";
+                $replacement = " ";
+                preg_replace($pattern, $replacement, $res);
 
 				$sInsert2 = "Insert into consultas_circulo(folioconsulta, buro, respuestaxml, consultaxml, solicitante, noetapa, valoretapa, tipocuenta, claveunidadmonetaria, importecontrato, usuario_id_sol, usuario_id_aut, computadora, confirma, sucursal, productorequerido, fecha_creacion) values("
-                + $iFolioid + ",'B','" + $res +"','" + $con + "','" + $idsol + "'," + $noEtapa + ",'" + $valorEtapa + "','" + $TipoCuenta + "','" + $ClaveUnidadMonetaria + "',"+ $ImporteContrato + ","+ $usuario_id_sol + "," + $usuario_id_aut + ",'" + $computadora + "'," + $confirma + ",'" + $sucursal + "'," + $ProductoRequerido + ", CURRENT_TIMESTAMP)";
-				//System.out.println(sInsert2);
+                . $iFolioid . ",'B','" . $res ."','" . $con . "','" . $idsol . "'," . $noEtapa . ",'" . $valorEtapa . "','" . $TipoCuenta . "','" . $ClaveUnidadMonetaria . "',". $ImporteContrato . ",". $usuario_id_sol . "," . $usuario_id_aut . ",'" . $computadora . "'," . $confirma . ",'" . $sucursal . "'," . $ProductoRequerido . ", CURRENT_TIMESTAMP)";
                 $sInsert2 = DB::insert($sInsert2);				
 
-				//Logger.getAnonymousLogger().info(sInsert2);
+				Log::info($sInsert2);
 
 			}
 		}
         catch(\Exception $e){
-            // Logger.getAnonymousLogger().info(e.toString());
-            // for( int i=0; i!= e.getStackTrace().length; i++) {
-            //     Logger.getAnonymousLogger().info(e.getStackTrace()[i].toString());
-            // }
+             Log::info($e);
 		}
 
 		return $iFolioid;
@@ -431,35 +362,35 @@ class BuroPFImplController extends Controller
             if ($sNombre != "NOMBRE") {
                 $sDom = $this->domicilio($nSolicitante);
                 if ($sDom != "DOMIC") {                    
-                    $sConsulta = $sINTL + $sNombre + $sDom;
+                    $sConsulta = $sINTL . $sNombre . $sDom;
                 }
             }
         }
 	    $lgt = 15;
-	    $lgt += strlen($sConsulta;
+	    $lgt += strlen($sConsulta);
 	    $Es = "";
 	    if($lgt >= 0 && $lgt < 10)
         {
-            $Es = "ES050000" + $lgt + "0002**";
+            $Es = "ES050000" . $lgt . "0002**";
         }
 	    if($lgt >=10 && $lgt < 100)
         {
-            $Es = "ES05000" + $lgt + "0002**";
+            $Es = "ES05000" . $lgt . "0002**";
         }
 	    if($lgt >= 100 && $lgt < 1000)
         {
-            $Es = "ES0500" + $lgt + "0002**";
+            $Es = "ES0500" . $lgt . "0002**";
         }
 	    if($lgt >= 1000 && $lgt < 10000)
         {
-            $Es = "ES050" + $lgt + "0002**";
+            $Es = "ES050" . $lgt . "0002**";
         }
 	    if($lgt >=10000 && $lgt < 100000)
         {
-            $Es = "ES05" + $lgt + "0002**";
+            $Es = "ES05" . $lgt . "0002**";
         }
 
-		return $sConsulta + $Es;
+		return $sConsulta . $Es;
 	}
 
     /*
@@ -470,46 +401,41 @@ class BuroPFImplController extends Controller
 
 		$sEnc="";
 
-			$sSql = "select coalesce(lim_sup,0) as lim_sup from cat_creditos where clave=" + ProductoRequerido;
+			$sSql = "select coalesce(lim_sup,0) as lim_sup from cat_creditos where clave=" . ProductoRequerido;
 			$monto = 0;
 			$monto2 = $mont;
 			$sMonto = "000000000";
 			try {
                 $res = DB::select($sSql);
-                $monto = res->lim_sup;
+                $monto = $res->lim_sup;
                 
 				if ($monto>99) {
                     $sEnc = "INTL";		//Etiqueta
-                    $sEnc = $sEnc + "11"; 	//Version
-                    $sEnc = $sEnc + "                         "; 	//Referencia 25 espacios
-                    $sEnc = $sEnc + "001"; 	//Producto
-                    $sEnc = $sEnc + "MX"; 	//Pais
-                    $sEnc = $sEnc + "0000";	//Identificador
-                    $sEnc = $sEnc + $clave; 	//Clave
-                    $sEnc = $sEnc + $pass; 	//Password
-                    $sEnc = $sEnc + "I"; 	//Indicador
-                    $sEnc = $sEnc + "CL"; 	//Contrato valo original LC cambio a CL
-                    $sEnc = $sEnc + "MX"; 	//Pesos
+                    $sEnc = $sEnc . "11"; 	//Version
+                    $sEnc = $sEnc . "                         "; 	//Referencia 25 espacios
+                    $sEnc = $sEnc . "001"; 	//Producto
+                    $sEnc = $sEnc . "MX"; 	//Pais
+                    $sEnc = $sEnc . "0000";	//Identificador
+                    $sEnc = $sEnc . $clave; 	//Clave
+                    $sEnc = $sEnc . $pass; 	//Password
+                    $sEnc = $sEnc . "I"; 	//Indicador
+                    $sEnc = $sEnc . "CL"; 	//Contrato valo original LC cambio a CL
+                    $sEnc = $sEnc . "MX"; 	//Pesos
                     
                     $mto = $monto2;
 
 					$sMonto = substr($sMonto , 0 , strlen($sMonto) - strlen($mto));
-					$sMonto = $sMonto + $mto;
+					$sMonto = $sMonto . $mto;
 
-					$sEnc = $sEnc + $sMonto; 	//Monto
-					$sEnc = $sEnc + "SP"; 	//Idioma
-					$sEnc = $sEnc + "01"; 	//Tipo Salida
-					$sEnc = $sEnc + "S    "; 	//Tamañ				sEnc=sEnc + "    "; 	//Impresora
-					$sEnc = $sEnc + "0000000"; 	//Pesos
+					$sEnc = $sEnc . $sMonto; 	//Monto
+					$sEnc = $sEnc . "SP"; 	//Idioma
+					$sEnc = $sEnc . "01"; 	//Tipo Salida
+					$sEnc = $sEnc . "S    "; 	//Tamañ				sEnc=sEnc . "    "; 	//Impresora
+					$sEnc = $sEnc . "0000000"; 	//Pesos
 				}
-			} catch(Exception e) {
-                // Logger.getAnonymousLogger().info(e.toString());
-                // for( int i=0; i!= e.getStackTrace().length; i++) {
-                //     Logger.getAnonymousLogger().info(e.getStackTrace()[i].toString());
-                // }
+			} catch(\Exception $e) {
+                Log::info($e);
 			}
-    			//System.out.println(sEnc);
-
 		return $sEnc;
 	}
 
@@ -528,14 +454,11 @@ class BuroPFImplController extends Controller
 			$fFecAct = $res->vescribe;
 
 		} catch(\Exception $e) {
-		     // Logger.getAnonymousLogger().info(e.toString());
-             // for( int i=0; i!= e.getStackTrace().length; i++) {
-             //    Logger.getAnonymousLogger().info(e.getStackTrace()[i].toString());
-             //   }
+		      Log::info($e);
          }
 
-		$sSql = "select buro_nombre('A','" + $idSolicitante + "',1,1,'', $current_date) as vescribe";
-		//Logger.getAnonymousLogger().info("Cadena de nombre:" + sSql );
+		$sSql = "select buro_nombre('A','" .$idSolicitante. "',1,1,'', current_date) as vescribe";
+		Log::info("Cadena de nombre:" . sSql );
 		
         try {
 
@@ -545,10 +468,7 @@ class BuroPFImplController extends Controller
             }
             
 		} catch(\Exception $e) {
-            // Logger.getAnonymousLogger().info(e.toString());
-            // for( int i=0; i!= e.getStackTrace().length; i++) {
-            //     Logger.getAnonymousLogger().info(e.getStackTrace()[i].toString());
-            // }
+            Log::info($e);
 		}
 		return $sSol;
 	}
@@ -558,7 +478,7 @@ class BuroPFImplController extends Controller
     */
 	private  function domicilio($idSolicitante) {
         $sSol="DOMIC";
-		$sSql = "select buro_domicilio('A','" + idSolicitante + "',1,1) as vescribe";
+		$sSql = "select buro_domicilio('A','" . $idSolicitante . "',1,1) as vescribe";
 
 		try {
 
@@ -567,31 +487,28 @@ class BuroPFImplController extends Controller
                 $sSol = $res1->vescribe;
             }        
 			
-			// Logger.getAnonymousLogger().info(sSol);
+			Log::info($sSol);
 		} catch(\Exception $e) {
-            // Logger.getAnonymousLogger().info(e.toString());
-            // for( int i=0; i!= e.getStackTrace().length; i++) {
-            //     Logger.getAnonymousLogger().info(e.getStackTrace()[i].toString());
-            // }
+            Log::info($e);
 		}
 
-		return sSol;
+		return $sSol;
 	}
 
     /*
     *fin
     */
-	private  function $fin($sResultado) {
+	private  function fin($sResultado) {
         
         $sFin = "";
 		$longitud = 0;
 		$longitud = strlen($sResultado);
 		if ($longitud > 0) {
             $longitud = $longitud + 15;
-            $sFin = "00000" + $longitud;
+            $sFin = "00000" . $longitud;
             $longitud = strlen($sFin);
             $sFin = substr($sFin , $longitud-5 , $longitud);
-            $sFin = "ES05" + $sFin + "0002**";
+            $sFin = "ES05" . $sFin . "0002**";
         }
 
 		return $sFin;
@@ -629,7 +546,7 @@ class BuroPFImplController extends Controller
 		$iLong = 0;
 		//$fFecNac = new Date(0,9,9); //= new Date();
         $fFecNac = new DateTime();
-		$xLong =$pNombre.length();
+		$xLong = strlen($pNombre);
 		while ($iPos < $xLong) {
             $sEtiq = substr($pNombre , $iPos , $iPos+2);
             $iPos = $iPos + 4;
@@ -673,24 +590,21 @@ class BuroPFImplController extends Controller
             if ($sEtiq  == "17") {
                 $sDep = substr($pNombre , $iPos , $iPos + $iLong); 	  //Dependientes
             }
-            if (($sEtiq == "PA") || ($sEtiq == "PE") || ($sEtiq == "TL") || ($sEtiq == "IQ")  || ($sEtiq  == "RS" )  {
+            if (($sEtiq == "PA") || ($sEtiq == "PE") || ($sEtiq == "TL") || ($sEtiq == "IQ")  || ($sEtiq  == "RS" ))  {
                 $iLong = $iPos - 4;
                 $iPos = $xLong;
             }
             $iPos += $iLong;
         }
 
-		$sInsert = "Insert into circulo_personas(folioconsultaotorgante, nombres, apellidopaterno, apellidomaterno, apellidoadicional, " +
-        "fechanacimiento, rfc, nacionalidad, estadocivil, numerodependientes, sexo, claveife) values(" +
-        $fol + ",'" + $sPropio + " " + $sSegundo + "','" +  $sPaterno + "','" + $sMaterno + "','" + $sAdicional + "','" + $fFecNac + "','" + $sRFC + "','" +
-        $sNac + "','" + $sEdoCivil + "'," + $sDep + ",'" + $sSexo +"','" + $sElectoral +"')";
+		$sInsert = "Insert into circulo_personas(folioconsultaotorgante, nombres, apellidopaterno, apellidomaterno, apellidoadicional, " ;
+        $sInsert .= "fechanacimiento, rfc, nacionalidad, estadocivil, numerodependientes, sexo, claveife) values(" . $fol . ",'" . $sPropio . " " . $sSegundo . "','" .  $sPaterno . "','" . $sMaterno . "','" . $sAdicional . "','" . $fFecNac . "','" . $sRFC . "','" .
+        $sNac . "','" . $sEdoCivil . "'," . $sDep . ",'" . $sSexo ."','" . $sElectoral ."')";
 		try{
-            // Logger.getAnonymousLogger().info(sInsert);
+            Log::info($sInsert);
             $st = DB::insert($sInsert);            
         } catch(\Exception $e){
-            // Logger.getAnonymousLogger().info(e.toString());
-            // for( int i=0; i!= e.getStackTrace().length; i++) {
-            // Logger.getAnonymousLogger().info(e.getStackTrace()[i].toString());
+            Log::info($e);
         }
 		
         $iLong = -1;
@@ -765,17 +679,14 @@ class BuroPFImplController extends Controller
             $iPos += $iLong;
         }
 
-		$sInsert = "Insert into circulo_domicilios(folioconsultaotorgante, direccion, ciudad, estado, cp, fecharesidencia, telefono, delegacionmunicipio, coloniapoblacion, fecharegistrodomicilio) values(" +
-        $fol + ",'" + ($sDir1 + " " + $sDir2) + "','" + $sCid + "','" + $sEdo + "'," + $sCP + ",'" + $fFecRes + "','" + $sTel + "','" + $sMun + "','" + $sCol + "','" + $fFecDom + "')";
+		$sInsert = "Insert into circulo_domicilios(folioconsultaotorgante, direccion, ciudad, estado, cp, fecharesidencia, telefono, delegacionmunicipio, coloniapoblacion, fecharegistrodomicilio) values(" .
+        $fol . ",'" . ($sDir1 . " " . $sDir2) . "','" . $sCid . "','" . $sEdo . "'," . $sCP . ",'" . $fFecRes . "','" . $sTel . "','" . $sMun . "','" . $sCol . "','" . $fFecDom . "')";
 
 		try{
-            //Logger.getAnonymousLogger().info(sInsert);
+            Log::info($sInsert);
             $st = DB::insert($sInsert);            
         } catch(\Exception $e) {
-            // Logger.getAnonymousLogger().info(e.toString());
-            // for( int i=0; i!= e.getStackTrace().length; i++) {
-            //     Logger.getAnonymousLogger().info(e.getStackTrace()[i].toString());
-            // }
+            Log::info($e);
 			$iLong = -1;
 		}
 
@@ -865,18 +776,14 @@ class BuroPFImplController extends Controller
 
                 $iPos += $iLong;
             }
-            $sInsert = "Insert into circulo_empleos(folioconsultaotorgante, direccion, coloniapoblacion, delegacionmunicipio, ciudad, estado, telefono, cp, nombreempresa, puesto, salariomensual, fechacontratacion, fechaultimadiaempleo) values(" +
-                $fol + ",'" + ($sDir1 + " " + $sDir2) + "','" + $sCol + "','" + $sMun + "','" + $sCid + "','" + $sEdo + "','" + $sTel + "'," + $sCP + ",'" + $sEmpleo + "','" + $sPuesto + "'," + $sSalario + ",'" + $fFecCon + "','" + $fFecEmp +  "')";
+            $sInsert = "Insert into circulo_empleos(folioconsultaotorgante, direccion, coloniapoblacion, delegacionmunicipio, ciudad, estado, telefono, cp, nombreempresa, puesto, salariomensual, fechacontratacion, fechaultimadiaempleo) values(" .
+                $fol . ",'" . ($sDir1 . " " . $sDir2) . "','" . $sCol . "','" . $sMun . "','" . $sCid . "','" . $sEdo . "','" . $sTel . "'," . $sCP . ",'" . $sEmpleo . "','" . $sPuesto . "'," . $sSalario . ",'" . $fFecCon . "','" . $fFecEmp .  "')";
     		try{
-
-                //Logger.getAnonymousLogger().info(sInsert);
-                $st = DB::insert($sInsert)
+                Logger::info($sInsert);
+                $st = DB::insert($sInsert);
                 
             } catch(\Exception $e) {
-                    // Logger.getAnonymousLogger().info(e.toString());
-                    // for( int i=0; i!= e.getStackTrace().length; i++) {
-                    //     Logger.getAnonymousLogger().info(e.getStackTrace()[i].toString());
-                    // }
+                    Log::info($e);
     			$iLong = -1;
     		}
 		} 
@@ -885,19 +792,15 @@ class BuroPFImplController extends Controller
             $fFecCon = $this->convierte_fecha($sFecCon);
             $fFecEmp = $this->convierte_fecha($sFecEmp);
 
-            $sInsert = "Insert into circulo_empleos(folioconsultaotorgante, direccion, coloniapoblacion, delegacionmunicipio, ciudad, estado, telefono, cp, nombreempresa, puesto, salariomensual, fechacontratacion, fechaultimadiaempleo) values(" +
-            $fol + ",'" + ($sDir1 + " " + $sDir2) + "','" + $sCol + "','" + $sMun + "','" + $sCid + "','" + $sEdo + "','" + $sTel + "'," + 
-            $sCP + ",'" + $sEmpleo + "','" + $sPuesto + "'," + $sSalario + ",'" + $fFecCon + "','" + $fFecEmp +  "')";
+            $sInsert = "Insert into circulo_empleos(folioconsultaotorgante, direccion, coloniapoblacion, delegacionmunicipio, ciudad, estado, telefono, cp, nombreempresa, puesto, salariomensual, fechacontratacion, fechaultimadiaempleo) values(" .
+            $fol . ",'" . ($sDir1 . " " . $sDir2) . "','" . $sCol . "','" . $sMun . "','" . $sCid . "','" . $sEdo . "','" . $sTel . "'," .
+            $sCP . ",'" . $sEmpleo . "','" . $sPuesto . "'," . $sSalario . ",'" . $fFecCon . "','" . $fFecEmp .  "')";
 			try{
-
-                //Logger.getAnonymousLogger().info(sInsert);
-                st = DB::insert($sInsert)
+                Log::info($sInsert);
+                $st = DB::insert($sInsert);
                 
             } catch(\Exception $e) {
-                // Logger.getAnonymousLogger().info(e.toString());
-                // for( int i=0; i!= e.getStackTrace().length; i++) {
-                //     Logger.getAnonymousLogger().info(e.getStackTrace()[i].toString());
-                // }
+                Log::info($e);
     			$iLong = -1;
     		}
     			$iLong = 0;
@@ -1048,9 +951,9 @@ class BuroPFImplController extends Controller
                     $sContrato="FACTORAJE";
                 if($sContrato == ("HA"))
                     $sContrato="HABILITACION O AVIO (PFAE)";
-                if(4sContrato == ("HE"))
+                if($sContrato == ("HE"))
                     $sContrato="PRESTAMO TIPO *HOME EQUITY*";
-                if(4sContrato == ("HI"))
+                if($sContrato == ("HI"))
                     $sContrato="MEJORAS A LA CASA";
                 if($sContrato == ("LS"))
                     $sContrato="ARRENDAMIENTO";
@@ -1058,12 +961,12 @@ class BuroPFImplController extends Controller
                     $sContrato="OTROS";
                 if($sContrato == ("OA"))
                     $sContrato="OTROS ADEUDOS VENCIDOS (PFAE)";
-                if(4sContrato == ("PA"))
+                if($sContrato == ("PA"))
                     $sContrato="PRESTAMOS PARA PERSONAS FISICAS CON ACTIVIDAD EMPRESARIAL PFAE)";
-                if(4sContrato == ("PB"))
+                if($sContrato == ("PB"))
                     $sContrato="EDITORIAL";
                 if($sContrato == ("PG"))
-                    4sContrato="PGUE (PRESTAMO CON GARANTIAS DE UNIDADES INDUSTRIALES)(PFAE)";
+                    $sContrato="PGUE (PRESTAMO CON GARANTIAS DE UNIDADES INDUSTRIALES)(PFAE)";
                 if($sContrato == ("PL"))
                     $sContrato="PRESTAMO PERSONAL";
                 if($sContrato == ("PR"))
@@ -1113,7 +1016,7 @@ class BuroPFImplController extends Controller
                     $sFrecPagos = "BIMESTRAL";
                 if($sFrecPagos == ("D"))
                     $sFrecPagos = "DIARO";
-                if(4sFrecPagos == ("H"))
+                if($sFrecPagos == ("H"))
                     $sFrecPagos = "POR HORA";
                 if($sFrecPagos == ("K"))
                     $sFrecPagos = "CATORCENAL";
@@ -1152,7 +1055,6 @@ class BuroPFImplController extends Controller
             if ($sEtiq == ("16")) {
                 $sFecCierre = substr($pCuenta , $iPos , $iPos + $iLong);	//Fecha cierre
                 $fFecCierre = $this->convierte_fecha($sFecCierre);
-                //System.out.println("esta es la f:" + fFecCierre);
             }
             if ($sEtiq == ("21")) {
                 $sCremax = substr($pCuenta , $iPos , $iPos + $iLong);	//Saldo Actual
@@ -1161,7 +1063,7 @@ class BuroPFImplController extends Controller
                 {
                     $sCremax = substr($pCuenta , $iPos , $iPos + $iLong - 1);
                     if($car == '-')
-                        $sCremax = "-" + $sCremax;
+                        $sCremax = "-" . $sCremax;
                 }
 			}
             if ($sEtiq == ("22")) {
@@ -1171,7 +1073,7 @@ class BuroPFImplController extends Controller
                 {
                     $sSaldo = substr($pCuenta , $iPos , $iPos + $iLong - 1);
                     if($car == '-')
-                        $sSaldo = "-" + $sSaldo;
+                        $sSaldo = "-" . $sSaldo;
                 }
 			}
             if ($sEtiq == ("23")) {
@@ -1186,29 +1088,29 @@ class BuroPFImplController extends Controller
             if ($sEtiq == ("26")) {
                 $sMOP = substr($pCuenta  , $iPos , $iPos + $iLong);		//Forma Pago
                 if($sMOP == ("UR"))
-                    $sMOP+= "=CUENTA SIN INFORMACION";
+                    $sMOP.= "=CUENTA SIN INFORMACION";
                 if($sMOP == ("00"))
-                    $sMOP+= "=MUY RECIENTE PARA SER INFORMADA";
+                    $sMOP.= "=MUY RECIENTE PARA SER INFORMADA";
                 if($sMOP == ("01"))
-                    $sMOP+= "=CUENTA AL CORRIENTE";
+                    $sMOP.= "=CUENTA AL CORRIENTE";
                 if($sMOP == ("02"))
-                    $sMOP+= "=ATRASO DE 01 A 29 DIAS";
+                    $sMOP.= "=ATRASO DE 01 A 29 DIAS";
                 if($sMOP == ("03"))
-                    $sMOP+= "=ATRASO DE 30 A 59 DIAS";
+                    $sMOP.= "=ATRASO DE 30 A 59 DIAS";
                 if($sMOP == ("04"))
-                    $sMOP+= "=ATRASO DE 60 A 89 DIAS";
+                    $sMOP.= "=ATRASO DE 60 A 89 DIAS";
                 if($sMOP == ("05"))
-                    $sMOP+= "=ATRASO DE 90 A 119 DIAS";
+                    $sMOP.= "=ATRASO DE 90 A 119 DIAS";
                 if($sMOP == ("06"))
-                    $sMOP+= "=ATRASO DE 120 A 149 DIAS";
+                    $sMOP.= "=ATRASO DE 120 A 149 DIAS";
                 if($sMOP == ("07"))
-                    $sMOP+= "=ATRASO DE 150 A 12 MESES";
+                    $sMOP.= "=ATRASO DE 150 A 12 MESES";
                 if($sMOP == ("96"))
-                    $sMOP+= "=ATRASO DE 12 MESES";
+                    $sMOP.= "=ATRASO DE 12 MESES";
                 if($sMOP == ("97"))
-                    $sMOP+= "=CUENTA CON DEUDA PARCIAL O TOTAL SIN RECUPERAR";
+                    $sMOP.= "=CUENTA CON DEUDA PARCIAL O TOTAL SIN RECUPERAR";
                 if($sMOP == ("99"))
-                    $sMOP+= "=FRAUDE COMETIDO POR EL CLIENTE";
+                    $sMOP.= "=FRAUDE COMETIDO POR EL CLIENTE";
             }
             if($sEtiq == ("27")){
                 $sHistorial = substr($pCuenta , $iPos , $iPos + $iLong); //Historial
@@ -1225,95 +1127,95 @@ class BuroPFImplController extends Controller
             if ($sEtiq == ("30")) {
                 $sObs = substr($pCuenta , $iPos , $iPos + $iLong);		//Observacion
                 if($sObs == ("AD"))
-                    $sObs += "=CUENTA EN DISPUTA";
+                    $sObs .= "=CUENTA EN DISPUTA";
                 if($sObs == ("CA"))
-                    $sObs += "=CUENTA AL CORRIENTE VENDIDA";
+                    $sObs .= "=CUENTA AL CORRIENTE VENDIDA";
                 if($sObs == ("CC"))
-                    $sObs += "=CUENTA CERRADA POR EL CONSUMIDOR";
+                    $sObs .= "=CUENTA CERRADA POR EL CONSUMIDOR";
                 if($sObs == ("CI"))
-                    $sObs += "=CANCELADA POR INACTIVIDAD";
+                    $sObs .= "=CANCELADA POR INACTIVIDAD";
                 if($sObs == ("CM"))
-                    $sObs += "=CANCELADA POR EL OTORGANTE";
+                    $sObs .= "=CANCELADA POR EL OTORGANTE";
                 if($sObs == ("CL"))
-                    $sObs+="=CUENTA EN COBRANZA PAGADA TOTALMENTE";
+                    $sObs.="=CUENTA EN COBRANZA PAGADA TOTALMENTE";
                 if($sObs == ("CP"))
-                    $sObs += "=CARTERA VENCIDA";
+                    $sObs .= "=CARTERA VENCIDA";
                 if($sObs == ("CR"))
-                    $sObs += "=DACION EN RENTA";
+                    $sObs .= "=DACION EN RENTA";
                 if($sObs == ("CV"))
                     $sObs += "=CUENTA VENCIDA VENDIDA";
                 if($sObs == ("CZ"))
-                    $sObs += "=CANCELADA CON SALDO CERO";
+                    $sObs .= "=CANCELADA CON SALDO CERO";
                 if($sObs == ("DP"))
-                    $sObs += "=PAGOS DIFERIDOS";
+                    $sObs .= "=PAGOS DIFERIDOS";
                 if($sObs == ("DR"))
-                    $sObs += "=DISPUTA RESUELTA, CONSUMIDOR INCONFORME";
+                    $sObs .= "=DISPUTA RESUELTA, CONSUMIDOR INCONFORME";
                 if($sObs == ("FD"))
-                    $sObs += "=CUENTA FRAUDULENTA";
+                    $sObs .= "=CUENTA FRAUDULENTA";
                 if($sObs == ("FN"))
-                    $sObs += "=CUENTA FRAUDULENTA NO ATRIBUIBLE AL CONSUMIDOR";
+                    $sObs .= "=CUENTA FRAUDULENTA NO ATRIBUIBLE AL CONSUMIDOR";
                 if($sObs == ("FP"))
-                    $sObs +="=CANCELACION DE ADJUDICACION DE INMUEBLE POR PAGO";
+                    $sObs .="=CANCELACION DE ADJUDICACION DE INMUEBLE POR PAGO";
                 if($sObs == ("FR"))
-                    $sObs +="=ADJUDICACION DE INMUEBLE EN PROCESO";
+                    $sObs .="=ADJUDICACION DE INMUEBLE EN PROCESO";
                 if($sObs == ("IA"))
-                    $sObs +="=CUENTA INACTIVA";
+                    $sObs .="=CUENTA INACTIVA";
                 if($sObs == ("IR"))
-                    $sObs +="=ADJUDICACION INVOLUNTARIA";
+                    $sObs .="=ADJUDICACION INVOLUNTARIA";
                 if($sObs == ("LC"))
                     $sObs +="=QUITA POR IMPORTE MENOR ACORDADA CON EL CONSUMIDOR";
                 if($sObs == ("LG"))
-                    $sObs +="=QUITA POR IMPORTE MENOR POR PROGRAMA INSTITUCIONAL";
+                    $sObs .="=QUITA POR IMPORTE MENOR POR PROGRAMA INSTITUCIONAL";
                 if($sObs == ("LS"))
-                    $sObs +="=TARJETA DE CREDITO EXTRAVIADA O ROBADA";
+                    $sObs .="=TARJETA DE CREDITO EXTRAVIADA O ROBADA";
                 if($sObs == ("MD"))
-                    $sObs +="=PAGO PARCIAL EFECTUADO A CUENTA IRRECUPERABLE";
+                    $sObs .="=PAGO PARCIAL EFECTUADO A CUENTA IRRECUPERABLE";
                 if($sObs == ("NA"))
-                    $sObs +="=CUENTA AL CORRIENTE VENDIDA A UN NO USUARIO DE BC";
+                    $sObs .="=CUENTA AL CORRIENTE VENDIDA A UN NO USUARIO DE BC";
                 if($sObs == ("NV"))
-                    $sObs +="=CUENTA VENCIDA VENDIDA A UN NO USUARIO DE BC";
+                    $sObs .="=CUENTA VENCIDA VENDIDA A UN NO USUARIO DE BC";
                 if($sObs == ("PC"))
-                    $sObs+="=ENVIADO A DESPACHO DE COBRANZA";
+                    $sObs.="=ENVIADO A DESPACHO DE COBRANZA";
                 if($sObs == ("PD"))
-                    $sObs+="=ADJUDICACION CANCELADA POR PAGO";
+                    $sObs.="=ADJUDICACION CANCELADA POR PAGO";
                 if($sObs == ("PL"))
-                    $sObs += "=LIMITE EXCEDIDO";
+                    $sObs .= "=LIMITE EXCEDIDO";
                 if($sObs == ("PS"))
-                    $sObs+="=SUSPENSION DE PAGO";
+                    $sObs.="=SUSPENSION DE PAGO";
                 if($sObs == ("RA"))
-                    $sObs+="=CUENTA AL CORRIENTE RESTRUCTURADA POR PROGRAMA INSTITUCIONAL";
+                    $sObs.="=CUENTA AL CORRIENTE RESTRUCTURADA POR PROGRAMA INSTITUCIONAL";
                 if($sObs == ("RC"))
-                    $sObs+="=CUENTA AL CORRIENTE RESTRUCTURADA ACORDADA CON EL CONSUMIDOR";
+                    $sObs.="=CUENTA AL CORRIENTE RESTRUCTURADA ACORDADA CON EL CONSUMIDOR";
                 if($sObs == ("RE"))
-                    $sObs+="=CUENTA AL CORRIENTE RESTRUCTURADA PAGADA TOTALMENTE";
+                    $sObs.="=CUENTA AL CORRIENTE RESTRUCTURADA PAGADA TOTALMENTE";
                 if($sObs == ("RF"))
-                    $sObs+="=REFINANCIADA";
+                    $sObs.="=REFINANCIADA";
                 if($sObs == ("RO"))
-                    $sObs+="=CUENTA VENCIDAD RESTRUCTURADA POR PROGRAMA INSTITUCIONAL";
+                    $sObs.="=CUENTA VENCIDAD RESTRUCTURADA POR PROGRAMA INSTITUCIONAL";
                 if($sObs == ("RR"))
-                    $sObs+="=RESTITUCION DEL BIEN";
+                    $sObs.="=RESTITUCION DEL BIEN";
                 if($sObs == ("RV"))
-                    $sObs+="=CUENTA VENCIDA RESTRUCTURADA ACORDADA CON EL CONSUMIDOR";
+                    $sObs.="=CUENTA VENCIDA RESTRUCTURADA ACORDADA CON EL CONSUMIDOR";
                 if($sObs == ("SC"))
-                    $sObs+="=DEMANDA RESUELTA EN FAVOR DEL CONSUMIDOR";
+                    $sObs.="=DEMANDA RESUELTA EN FAVOR DEL CONSUMIDOR";
                 if($sObs == ("SG"))
-                    $sObs+="=DEMANDA POR EL OTORGANTE";
+                    $sObs.="=DEMANDA POR EL OTORGANTE";
                 if($sObs == ("SP"))
-                    $sObs+="=DEMANDA RESUELTA A FAVOR DEL OTORGANTE";
+                    $sObs.="=DEMANDA RESUELTA A FAVOR DEL OTORGANTE";
                 if($sObs == ("ST"))
-                    $sObs+="=ACUERDO POR IMPORTE MENOR";
+                    $sObs.="=ACUERDO POR IMPORTE MENOR";
                 if($sObs == ("SU"))
-                    $sObs+="=DEMANDA POR EL CONSUMIDOR";
+                    $sObs.="=DEMANDA POR EL CONSUMIDOR";
                 if($sObs == ("TC"))
-                    $sObs+="=SUSTICION DE DEUDOR";
+                    $sObs.="=SUSTICION DE DEUDOR";
                 if($sObs == ("TL"))
-                    $sObs+="=TRANSFERENCIA A NUEVO OTORGANTE";
+                    $sObs.="=TRANSFERENCIA A NUEVO OTORGANTE";
                 if($sObs == ("TR"))
-                    $sObs+="=TRANSFERIDA A OTRA AREA";
+                    $sObs.="=TRANSFERIDA A OTRA AREA";
                 if($sObs == ("UP"))
-                    $sObs+="=CUENTA QUE CAUSA QUEBRANTO";
+                    $sObs.="=CUENTA QUE CAUSA QUEBRANTO";
                 if($sObs == ("VR"))
-                    $sObs+="=DACION EN PAGO";
+                    $sObs.="=DACION EN PAGO";
             }
             if ($sEtiq == ("37")) {
                 $sFecPeor = substr($pCuenta , $iPos , $iPos + $iLong);		//Fecha peor atraso
@@ -1322,29 +1224,29 @@ class BuroPFImplController extends Controller
             if ($sEtiq == ("38")) {
                 $sMOP2 = substr($pCuenta , $iPos , $iPos + $iLong);		//Forma Pago
                 if($sMOP2 == ("UR"))
-                    $sMOP2+= "=CUENTA SIN INFORMACION";
+                    $sMOP2.= "=CUENTA SIN INFORMACION";
                 if($sMOP2 == ("00"))
-                    $sMOP2+= "=MUY RECIENTE PARA SER INFORMADA";
+                    $sMOP2.= "=MUY RECIENTE PARA SER INFORMADA";
                 if($sMOP2 == ("01"))
-                    $sMOP2+= "=CUENTA AL CORRIENTE";
+                    $sMOP2.= "=CUENTA AL CORRIENTE";
                 if($sMOP2 == ("02"))
-                    $sMOP2+= "=ATRASO DE 01 A 29 DIAS";
+                    $sMOP2.= "=ATRASO DE 01 A 29 DIAS";
                 if($sMOP2 == ("03"))
-                    $sMOP2+= "=ATRASO DE 30 A 59 DIAS";
+                    $sMOP2.= "=ATRASO DE 30 A 59 DIAS";
                 if($sMOP2 == ("04"))
-                    $sMOP2+= "=ATRASO DE 60 A 89 DIAS";
+                    $sMOP2.= "=ATRASO DE 60 A 89 DIAS";
                 if($sMOP2 == ("05"))
-                    $sMOP2+= "=ATRASO DE 90 A 119 DIAS";
+                    $sMOP2.= "=ATRASO DE 90 A 119 DIAS";
                 if($sMOP2 == ("06"))
-                    $sMOP2+= "=ATRASO DE 120 A 149 DIAS";
+                    $sMOP2.= "=ATRASO DE 120 A 149 DIAS";
                 if($sMOP2 == ("07"))
-                    $sMOP2+= "=ATRASO DE 150 A 12 MESES";
+                    $sMOP2.= "=ATRASO DE 150 A 12 MESES";
                 if($sMOP2 == ("96"))
-                    $sMOP2+= "=ATRASO DE 12 MESES";
+                    $sMOP2.= "=ATRASO DE 12 MESES";
                 if($sMOP2 == ("97"))
-                    $sMOP2+= "=CUENTA CON DEUDA PARCIAL O TOTAL SIN RECUPERAR";
+                    $sMOP2.= "=CUENTA CON DEUDA PARCIAL O TOTAL SIN RECUPERAR";
                 if($sMOP2 == ("99"))
-                    $sMOP2+= "=FRAUDE COMETIDO POR EL CLIENTE";
+                    $sMOP2.= "=FRAUDE COMETIDO POR EL CLIENTE";
             }
             if (($sEtiq == ("TL")) || ($sEtiq == ("IQ"))  || ($sEtiq == ("RS")))  {
                 $iLong = $iPos - 4;
@@ -1356,28 +1258,25 @@ class BuroPFImplController extends Controller
 		if(empty($sLimite) || $sLimite  == ""){
             $sLimite = "0";
         }
-		// Logger.getAnonymousLogger().info(sLimite);
+		Log::info($sLimite);
 
 		
-		$sInsert = "Insert into Circulo_cuentas(folioconsultaotorgante, fechaactualizacion, registroimpugnado, claveotorgante, nombreotorgante, " +
-        "tiporesponsabilidad, tipocuenta, numeropagos, frecuenciapagos, fechaaperturacuenta, fechaultimopago, fechacierrecuenta, " +
-        "saldoactual, saldovencido, numeropagosvencidos, historicopagos,claveunidadmonetaria, pagoactual, fechapeoratraso," +
-        "saldovencidopeoratraso,limitecredito, montopagar, tipocredito, peoratraso, observacion, creditomaximo, fechaultimacompra, " +
-        "fecharecientehistoricopagos, fechaantiguahistoricopagos, tipo_credito_id) values(" +
-        $fol + ",'" + $fFecAct + "','" + $sImp + "','" + $clOtor + "','" + $nomOtor +
-        "','" + $sResp + "','" + $sTipo + "'," + $sNumPagos + ",'" + $sFrecPagos + "','" + $fFecAper + "','" + $fFecUlt
-        + "','" + $fFecCierre + "'," + $sSaldo + "," + $sVencido + "," + $sNumVenc + ",'" + $sHistorial + "','" + $sMoneda + "','"
-        + $sMOP + "','" + $fFecPeor + "','" + $sSaldov + "'," + $sLimite + "," + $sMonto + ",'" + $sContrato + "','" + $sMOP2 +
-        "','" + $sObs +"'," + $sCremax +",'" + $fFecUltc +"','" + $fFecRec + "','" + $fFecAnt + "','" + $sTContrato + "')";
+		$sInsert = "Insert into Circulo_cuentas(folioconsultaotorgante, fechaactualizacion, registroimpugnado, claveotorgante, nombreotorgante, " .
+        "tiporesponsabilidad, tipocuenta, numeropagos, frecuenciapagos, fechaaperturacuenta, fechaultimopago, fechacierrecuenta, " .
+        "saldoactual, saldovencido, numeropagosvencidos, historicopagos,claveunidadmonetaria, pagoactual, fechapeoratraso," .
+        "saldovencidopeoratraso,limitecredito, montopagar, tipocredito, peoratraso, observacion, creditomaximo, fechaultimacompra, " .
+        "fecharecientehistoricopagos, fechaantiguahistoricopagos, tipo_credito_id) values(" .
+        $fol . ",'" . $fFecAct . "','" . $sImp . "','" . $clOtor . "','" . $nomOtor .
+        "','" . $sResp . "','" . $sTipo . "'," . $sNumPagos . ",'" . $sFrecPagos . "','" . $fFecAper . "','" . $fFecUlt
+        . "','" . $fFecCierre . "'," . $sSaldo . "," . $sVencido . "," . $sNumVenc . ",'" . $sHistorial . "','" . $sMoneda . "','"
+        . $sMOP . "','" . $fFecPeor . "','" . $sSaldov . "'," . $sLimite . "," . $sMonto . ",'" . $sContrato . "','" . $sMOP2 .
+        "','" . $sObs ."'," . $sCremax .",'" . $fFecUltc ."','" . $fFecRec . "','" . $fFecAnt . "','" . $sTContrato . "')";
 
 		try{
-            //Logger.getAnonymousLogger().info(sInsert);
-            $st = DB::insert($sInsert)            
+            Log::info($sInsert);
+            $st = DB::insert($sInsert) ;
         } catch(\Exception $e) {
-            // Logger.getAnonymousLogger().info(e.toString());
-            // for( int i=0; i!= e.getStackTrace().length; i++) {
-            //     Logger.getAnonymousLogger().info(e.getStackTrace()[i].toString());
-            // }
+            Log::info($e);
 			$iLong = -1;
 		}
 		return $iLong;
@@ -1403,7 +1302,7 @@ class BuroPFImplController extends Controller
 		$iPos = 0;
 		$iLong = 0;
 		$xLong = strlen($pConsultas);
-//		Logger.getAnonymousLogger().info(pDir + " " + xLong);
+
 		while ($iPos < $xLong) {
             $sEtiq = substr($pConsultas , $iPos , $iPos + 2);
             $iPos = $iPos + 4;
@@ -1546,19 +1445,16 @@ class BuroPFImplController extends Controller
 
             $iPos += $iLong;
         }
-		$sInsert = "Insert into circulo_consultas_efectuadas(folioconsultaotorgante, fechaconsulta, claveotorgante, nombreotorgante, tipocredito, importecredito, tiporesponsabilidad, claveunidadmonetaria) values(" +
-        $fol + ",'" +  $fFecCons + "','" + $clOtor + "','" + $nomOtor + "','" + $sContrato + "'," + $sMonto  + ",'" + $sResp +"','" +  
-        $sMoneda+ "')";
+		$sInsert = "Insert into circulo_consultas_efectuadas(folioconsultaotorgante, fechaconsulta, claveotorgante, nombreotorgante, tipocredito, importecredito, tiporesponsabilidad, claveunidadmonetaria) values(" .
+        $fol . ",'" .  $fFecCons . "','" . $clOtor . "','" . $nomOtor . "','" . $sContrato . "'," . $sMonto  . ",'" . $sResp ."','" .
+        $sMoneda. "')";
 		try{
-            //Logger.getAnonymousLogger().info(sInsert);
+            Log::info($sInsert);
             $st = DB::insert($sInsert);            
         }
         catch(\Exception $e)
         {
-            // Logger.getAnonymousLogger().info(e.toString());
-            // for( int i=0; i!= e.getStackTrace().length; i++) {
-            //     Logger.getAnonymousLogger().info(e.getStackTrace()[i].toString());
-            // }
+            Log::info($e);
 			$iLong = -1;
 		}
 
@@ -1581,6 +1477,5 @@ class BuroPFImplController extends Controller
         $fFecha = new DateTime(1988,8,8);
 		return $fFecha = substr($xFecha , 4 ,8) . "-" . subtr($xFecha , 2 ,4) . "-" . substr($xFecha , 0,2) ;
 	}
-}
 
 }

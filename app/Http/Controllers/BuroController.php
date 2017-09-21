@@ -11,6 +11,7 @@ use App\Http\Controllers\BuroPMImplController;
 
 use DB;
 use Response;
+use Log;
 
 class BuroController extends Controller
 {
@@ -18,12 +19,9 @@ class BuroController extends Controller
      * Test dataabse
     */
     function testSql(Request $request) {
-
         $ret = array();
-        $user = DB::table('paises as test')
-        //->where('id', 1)
-        ->select(DB::raw('test.*'))
-        ->first();
+        $user = DB::select('select * from paises');
+        $ret['host'] = HOST;
         $ret['test'] = $user;
         return Response::json($ret);
     }
@@ -34,7 +32,9 @@ class BuroController extends Controller
         $buuro = new BuroPFImplController();
         return $buuro->testObject();
     }
-
+    /*
+     * test exception
+     */
     function testException(Request $request) {
         try {
             $ret = array();
@@ -74,10 +74,12 @@ class BuroController extends Controller
         try {
         $conn = '';
             if ($buro == null) {
-                $data = DB::table('solicitante')
-                        ->whereRaw("numero = " + $solicitante)
-                        ->select(DB::raw('*'))
-                        ->first();
+                $query = "SELECT t_persona FROM solicitante WHERE numero = " + $solicitante;
+                $data = DB::select($query);
+//                $data = DB::table('solicitante')
+//                        ->whereRaw("numero = " . $solicitante)
+//                        ->select(DB::raw('*'))
+//                        ->first();
                 if(!empty($data)) {
                     $buro = $data->t_persona;
                 }
@@ -188,11 +190,11 @@ class BuroController extends Controller
         try {
             $conn = "";
             //get table from variable iFolio
-            $res2 = DB::select("select buro_califica_cuentas(" + iFolio + ")");
+            $res2 = DB::select("select buro_califica_cuentas(" . iFolio . ")");
             $iResult = reset($res2); //get first colum 
 
             if (iResult > 0){
-                $res2 = DB::select("select coalesce(autorizar,'') from cat_resultado where resultado_id = " + $iResult);
+                $res2 = DB::select("select coalesce(autorizar,'') from cat_resultado where resultado_id = " . $iResult);
                 if (empty($res2))
                     return -1;
                 $resultado = reset($res2); // get first colum
@@ -218,7 +220,7 @@ class BuroController extends Controller
      */
 	private function comprobarFolio($folio) {
         try {
-            $res = DB::select("SELECT COUNT(*) AS existe FROM consultas_circulo WHERE folioconsulta = '" + $folio + "'");
+            $res = DB::select("SELECT COUNT(*) AS existe FROM consultas_circulo WHERE folioconsulta = '" . $folio . "'");
 
             if (!empty($res)) return false;
 
