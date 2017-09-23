@@ -1,0 +1,40 @@
+/*=================================================
+||				Portfolio
+==================================================*/
+
+
+.portfolio-header{
+	background: #eaeaea;
+	text-transform: uppercase;
+}
+/*.navbar-default{
+	padding: 20px 0px;
+}*/
+.navbar{
+	margin-bottom: 0px;height:60px;
+}
+.breadcrumb{
+    padding: 235px 15px 0px;
+    list-style: none;
+    background-color: transparent;
+    border-radius: 0px;
+}
+.breadcrumb .active{
+	color: #fff;
+}
+.breadcrumb>li+li:before {
+    padding: 0 5px;
+    color: #fff;
+    
+    font-family: "ionicons";
+}
+.breadcrumb a{
+	color: #fff;
+	border: 1px solid transparent;
+	text-decoration: none;
+	padding: 5px;
+}
+.breadcrumb a:hover{
+	color: #fff;
+	border: 1px solid #fff;
+}

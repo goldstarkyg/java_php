@@ -1,0 +1,1064 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ce72248d-f400-407f-83e3-731a75785ea2" name="Default" comment="" />
+    <ignored path="JavaToPhp.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="JavaToPhp" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="BuroController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Buro/app/Http/Controllers/BuroController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3060">
+              <caret line="189" column="13" selection-start-line="189" selection-start-column="13" selection-end-line="189" selection-end-column="13" />
+              <folding>
+                <element signature="e#40#76#0#PHP" expanded="true" />
+                <marker date="1505834527693" expanded="true" signature="455:475" placeholder="select * fro... paises" />
+                <marker date="1505834527693" expanded="true" signature="455:477" placeholder="select * fro... paises" />
+                <marker date="1505834527693" expanded="true" signature="2216:2264" placeholder="SELECT t_per... solicitante" />
+                <marker date="1505834527693" expanded="true" signature="6046:6090" placeholder="select * fro... users" />
+                <marker date="1505834527693" expanded="true" signature="6217:6286" placeholder="select coale... cat_resultado" />
+                <marker date="1505834527693" expanded="true" signature="6217:6287" placeholder="select coale... cat_resultado" />
+                <marker date="1505834527693" expanded="true" signature="7029:7101" placeholder="SELECT COUNT... consultas_circulo" />
+                <marker date="1505834527693" expanded="true" signature="7029:7116" placeholder="SELECT COUNT... consultas_circulo" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Buro/public/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Buro/resources/views/includes/header.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Buro/resources/views/home.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BuroPMImplController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Buro/app/Http/Controllers/BuroPMImplController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="2698" column="16" selection-start-line="2698" selection-start-column="16" selection-end-line="2698" selection-end-column="16" />
+              <folding>
+                <marker date="1505817710642" expanded="true" signature="4807:4873" placeholder="SELECT respu... consultas_circulo" />
+                <marker date="1505817710642" expanded="true" signature="4807:4889" placeholder="SELECT respu... consultas_circulo" />
+                <marker date="1505817710642" expanded="true" signature="15491:15620" placeholder="INSERT INTO buro_consultapm_hd... " />
+                <marker date="1505817710642" expanded="true" signature="17505:17598" placeholder="INSERT INTO buro_consultapm_em... " />
+                <marker date="1505817710642" expanded="true" signature="17505:17974" placeholder="INSERT INTO buro_consultapm_em... " />
+                <marker date="1505817710642" expanded="true" signature="17505:18386" placeholder="INSERT INTO buro_consultapm_em... " />
+                <marker date="1505817710642" expanded="true" signature="17505:18484" placeholder="INSERT INTO buro_consultapm_em... " />
+                <marker date="1505817710642" expanded="true" signature="26922:27052" placeholder="INSERT INTO buro_consultapm_hc... " />
+                <marker date="1505817710642" expanded="true" signature="28824:28959" placeholder="INSERT INTO buro_consultapm_hr... " />
+                <marker date="1505817710642" expanded="true" signature="30727:30846" placeholder="INSERT INTO buro_consultapm_dc... " />
+                <marker date="1505817710642" expanded="true" signature="30727:31096" placeholder="INSERT INTO buro_consultapm_dc... " />
+                <marker date="1505817710642" expanded="true" signature="30727:31237" placeholder="INSERT INTO buro_consultapm_dc... " />
+                <marker date="1505817710642" expanded="true" signature="37140:37243" placeholder="INSERT INTO buro_consultapm_ac... " />
+                <marker date="1505817710642" expanded="true" signature="37140:37506" placeholder="INSERT INTO buro_consultapm_ac... " />
+                <marker date="1505817710642" expanded="true" signature="42296:42399" placeholder="INSERT INTO buro_consultapm_cr... " />
+                <marker date="1505817710642" expanded="true" signature="42296:42521" placeholder="INSERT INTO buro_consultapm_cr... " />
+                <marker date="1505817710642" expanded="true" signature="42296:42639" placeholder="INSERT INTO buro_consultapm_cr... " />
+                <marker date="1505817710642" expanded="true" signature="42296:43055" placeholder="INSERT INTO buro_consultapm_cr... " />
+                <marker date="1505817710642" expanded="true" signature="51405:51519" placeholder="INSERT INTO buro_consultapm_hi... " />
+                <marker date="1505817710642" expanded="true" signature="51405:51673" placeholder="INSERT INTO buro_consultapm_hi... " />
+                <marker date="1505817710642" expanded="true" signature="55377:55479" placeholder="INSERT INTO buro_consultapm_co... " />
+                <marker date="1505817710642" expanded="true" signature="55377:55795" placeholder="INSERT INTO buro_consultapm_co... " />
+                <marker date="1505817710642" expanded="true" signature="59597:59733" placeholder="INSERT INTO buro_consultapm_fd... " />
+                <marker date="1505817710642" expanded="true" signature="61567:61687" placeholder="INSERT INTO buro_consultapm_cn... " />
+                <marker date="1505817710642" expanded="true" signature="63282:63395" placeholder="INSERT INTO buro_consultapm_er... " />
+                <marker date="1505817710642" expanded="true" signature="63282:63562" placeholder="INSERT INTO buro_consultapm_er... " />
+                <marker date="1505817710642" expanded="true" signature="66695:66793" placeholder="INSERT INTO buro_consultapm_ci... " />
+                <marker date="1505817710642" expanded="true" signature="74140:74417" placeholder="Insert into consultas_circulo... " />
+                <marker date="1505817710642" expanded="true" signature="74140:74635" placeholder="Insert into consultas_circulo... " />
+                <marker date="1505817710642" expanded="true" signature="74140:74683" placeholder="Insert into consultas_circulo... " />
+                <marker date="1505817710642" expanded="true" signature="74140:74705" placeholder="Insert into consultas_circulo... " />
+                <marker date="1505817710642" expanded="true" signature="74140:74743" placeholder="Insert into consultas_circulo... " />
+                <marker date="1505817710642" expanded="true" signature="74140:74807" placeholder="Insert into consultas_circulo... " />
+                <marker date="1505817710642" expanded="true" signature="75158:75196" placeholder="Update consu... " />
+                <marker date="1505817710642" expanded="true" signature="75158:75306" placeholder="Update consu... " />
+                <marker date="1505817710642" expanded="true" signature="75343:75470" placeholder="Update consu... " />
+                <marker date="1505817710642" expanded="true" signature="75343:75580" placeholder="Update consu... " />
+                <marker date="1505817710642" expanded="true" signature="75693:75791" placeholder="Update consu... " />
+                <marker date="1505817710642" expanded="true" signature="75693:75792" placeholder="Update consu... " />
+                <marker date="1505817710642" expanded="true" signature="76089:76174" placeholder="select 1 fro... pg_class" />
+                <marker date="1505817710642" expanded="true" signature="80792:80906" placeholder="Insert into circulo_personas... " />
+                <marker date="1505817710642" expanded="true" signature="80792:81009" placeholder="Insert into circulo_personas... " />
+                <marker date="1505817710642" expanded="true" signature="82795:82907" placeholder="Insert into circulo_domicilios... " />
+                <marker date="1505817710642" expanded="true" signature="82795:82988" placeholder="Insert into circulo_domicilios... " />
+                <marker date="1505817710642" expanded="true" signature="84688:84811" placeholder="Insert into circulo_cuentas... " />
+                <marker date="1505817710642" expanded="true" signature="84688:85063" placeholder="Insert into circulo_cuentas... " />
+                <marker date="1505817710642" expanded="true" signature="84688:85284" placeholder="Insert into circulo_cuentas... " />
+                <marker date="1505817710642" expanded="true" signature="89821:89933" placeholder="Insert into circulo_consultas_efectuadas... " />
+                <marker date="1505817710642" expanded="true" signature="89821:90023" placeholder="Insert into circulo_consultas_efectuadas... " />
+                <marker date="1505817710642" expanded="true" signature="91821:91880" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="91821:91881" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="91945:92006" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="91945:92007" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="92081:92139" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="92081:92140" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="92214:92272" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="92214:92273" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="92347:92418" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="92347:92419" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="92524:92577" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="92524:92578" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="92636:92689" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="92636:92690" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="92749:92802" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="92749:92803" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="92862:92915" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="92862:92916" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="92971:93024" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="92971:93025" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="93084:93137" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="93084:93138" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="93197:93250" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="93197:93251" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="93311:93364" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="93311:93365" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="93424:93477" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="93424:93478" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="93537:93590" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="93537:93591" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="93649:93702" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="93649:93703" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="93761:93814" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="93761:93815" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="93869:93922" placeholder="DELETE FROM " />
+                <marker date="1505817710642" expanded="true" signature="93869:93923" placeholder="DELETE FROM " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Buro/resources/views/layouts/app.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="footer.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Buro/resources/views/includes/footer.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Buro/public/js/test.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
+              <folding>
+                <marker date="1505833513464" expanded="true" signature="945:963" placeholder="..." />
+                <marker date="1505833513464" expanded="true" signature="1088:1106" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Buro/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BuroPFImplController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Buro/app/Http/Controllers/BuroPFImplController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="25075">
+              <caret line="1481" column="0" selection-start-line="1481" selection-start-column="0" selection-end-line="1481" selection-end-column="0" />
+              <folding>
+                <element signature="e#40#76#0#PHP" expanded="true" />
+                <marker date="1505811481216" expanded="true" signature="975:1068" placeholder="select usuar... cat_empresas" />
+                <marker date="1505811481216" expanded="true" signature="3023:3314" placeholder="..." />
+                <marker date="1505811481216" expanded="true" signature="3159:3295" placeholder="..." />
+                <marker date="1505811481216" expanded="true" signature="3340:3629" placeholder="..." />
+                <marker date="1505811481216" expanded="true" signature="3362:3608" placeholder="//..." />
+                <marker date="1505811481216" expanded="true" signature="4208:4244" placeholder="//..." />
+                <marker date="1505811481216" expanded="true" signature="5397:5463" placeholder="select respu... consultas_circulo" />
+                <marker date="1505811481216" expanded="true" signature="5397:5478" placeholder="select respu... consultas_circulo" />
+                <marker date="1505811481216" expanded="true" signature="5524:5583" placeholder="Delete from " />
+                <marker date="1505811481216" expanded="true" signature="5524:5584" placeholder="Delete from " />
+                <marker date="1505811481216" expanded="true" signature="5633:5694" placeholder="Delete from " />
+                <marker date="1505811481216" expanded="true" signature="5633:5695" placeholder="Delete from " />
+                <marker date="1505811481216" expanded="true" signature="5744:5802" placeholder="Delete from " />
+                <marker date="1505811481216" expanded="true" signature="5744:5803" placeholder="Delete from " />
+                <marker date="1505811481216" expanded="true" signature="5852:5910" placeholder="Delete from " />
+                <marker date="1505811481216" expanded="true" signature="5852:5911" placeholder="Delete from " />
+                <marker date="1505811481216" expanded="true" signature="5960:6032" placeholder="Delete from " />
+                <marker date="1505811481216" expanded="true" signature="5960:6033" placeholder="Delete from " />
+                <marker date="1505811481216" expanded="true" signature="10811:10839" placeholder="//..." />
+                <marker date="1505811481216" expanded="true" signature="10958:10996" placeholder="Update consu... " />
+                <marker date="1505811481216" expanded="true" signature="10958:11069" placeholder="Update consu... " />
+                <marker date="1505811481216" expanded="true" signature="11184:11198" placeholder="//..." />
+                <marker date="1505811481216" expanded="true" signature="11334:11374" placeholder="Update consu... " />
+                <marker date="1505811481216" expanded="true" signature="11334:11476" placeholder="Update consu... " />
+                <marker date="1505811481216" expanded="true" signature="11646:11660" placeholder="//..." />
+                <marker date="1505811481216" expanded="true" signature="11891:11905" placeholder="//..." />
+                <marker date="1505811481216" expanded="true" signature="12476:12490" placeholder="//..." />
+                <marker date="1505811481216" expanded="true" signature="12703:12973" placeholder="Insert into consultas_circulo... " />
+                <marker date="1505811481216" expanded="true" signature="12703:13328" placeholder="Insert into consultas_circulo... " />
+                <marker date="1505811481216" expanded="true" signature="13466:13480" placeholder="//..." />
+                <marker date="1505811481216" expanded="true" signature="14886:14954" placeholder="select coale... cat_creditos" />
+                <marker date="1505811481216" expanded="true" signature="16263:16277" placeholder="//..." />
+                <marker date="1505811481216" expanded="true" signature="16564:16579" placeholder="//..." />
+                <marker date="1505811481216" expanded="true" signature="16932:16946" placeholder="//..." />
+                <marker date="1505811481216" expanded="true" signature="17383:17397" placeholder="//..." />
+                <marker date="1505811481216" expanded="true" signature="20628:20742" placeholder="Insert into circulo_personas... " />
+                <marker date="1505811481216" expanded="true" signature="23662:23845" placeholder="Insert into circulo_domicilios... " />
+                <marker date="1505811481216" expanded="true" signature="23662:24031" placeholder="Insert into circulo_domicilios... " />
+                <marker date="1505811481216" expanded="true" signature="24172:24186" placeholder="//..." />
+                <marker date="1505811481216" expanded="true" signature="27316:27535" placeholder="Insert into circulo_empleos... " />
+                <marker date="1505811481216" expanded="true" signature="27316:27786" placeholder="Insert into circulo_empleos... " />
+                <marker date="1505811481216" expanded="true" signature="27958:27972" placeholder="//..." />
+                <marker date="1505811481216" expanded="true" signature="28168:28387" placeholder="Insert into circulo_empleos... " />
+                <marker date="1505811481216" expanded="true" signature="28168:28646" placeholder="Insert into circulo_empleos... " />
+                <marker date="1505811481216" expanded="true" signature="28808:28822" placeholder="//..." />
+                <marker date="1505811481216" expanded="true" signature="48840:48963" placeholder="Insert into Circulo_cuentas... " />
+                <marker date="1505811481216" expanded="true" signature="48840:50042" placeholder="Insert into Circulo_cuentas... " />
+                <marker date="1505811481216" expanded="true" signature="50172:50186" placeholder="//..." />
+                <marker date="1505811481216" expanded="true" signature="57186:57378" placeholder="Insert into circulo_consultas_efectuadas... " />
+                <marker date="1505811481216" expanded="true" signature="57186:57537" placeholder="Insert into circulo_consultas_efectuadas... " />
+                <marker date="1505811481216" expanded="true" signature="57693:57707" placeholder="//..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/PHP/Buro.php" />
+        <option value="$PROJECT_DIR$/Buro/.env" />
+        <option value="$PROJECT_DIR$/Buro/config/database.php" />
+        <option value="$PROJECT_DIR$/Buro/app/Http/Controllers/FirstTableController.php" />
+        <option value="$PROJECT_DIR$/Buro/resources/views/welcome.blade.php" />
+        <option value="$PROJECT_DIR$/Buro/app/Http/Controllers/Util.php" />
+        <option value="$PROJECT_DIR$/Buro/bootstrap/autoload.php" />
+        <option value="$PROJECT_DIR$/Buro/composer.json" />
+        <option value="$PROJECT_DIR$/Java/BuroPFImpl.java" />
+        <option value="$PROJECT_DIR$/Buro/storage/logs/laravel.log" />
+        <option value="$PROJECT_DIR$/Buro/app/Http/Controllers/BuroPFImplController.php" />
+        <option value="$PROJECT_DIR$/Buro/bootstrap/constants.php" />
+        <option value="$PROJECT_DIR$/Buro/app/Http/Controllers/BuroPMImplController.php" />
+        <option value="$PROJECT_DIR$/Buro/app/Http/Controllers/INTFConsultaController.php" />
+        <option value="$PROJECT_DIR$/Buro/app/Http/Controllers/INTFLecturaController.php" />
+        <option value="$PROJECT_DIR$/Buro/resources/layouts/app.blade.php" />
+        <option value="$PROJECT_DIR$/Buro/resources/views/index.blade.php" />
+        <option value="$PROJECT_DIR$/Buro/routes/web.php" />
+        <option value="$PROJECT_DIR$/Buro/resources/views/includes/header.blade.php" />
+        <option value="$PROJECT_DIR$/Buro/public/js/test.js" />
+        <option value="$PROJECT_DIR$/Buro/resources/views/includes/footer.blade.php" />
+        <option value="$PROJECT_DIR$/Buro/resources/views/home.blade.php" />
+        <option value="$PROJECT_DIR$/Buro/app/Http/Controllers/BuroController.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="width" value="1600" />
+    <option name="height" value="860" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Blade files</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaToPhp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaToPhp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaToPhp" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaToPhp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaToPhp" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Buro" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaToPhp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaToPhp" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Buro" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaToPhp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaToPhp" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Buro" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaToPhp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaToPhp" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Buro" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../OCPC Marketing/CMS-Top-Ridez/cms" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="js-jscs-nodeInterpreter" value="C:\Program Files (x86)\nodejs\node.exe" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\work\JavaToPhp\Buro\resources\views" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\MyWork\Web_Project\JavaToPhp\Buro\app\Http\Controllers" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ce72248d-f400-407f-83e3-731a75785ea2" name="Default" comment="" />
+      <created>1505438408581</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1505438408581</updated>
+      <workItem from="1505438410296" duration="9232000" />
+      <workItem from="1505464309281" duration="2963000" />
+      <workItem from="1505481869059" duration="3878000" />
+      <workItem from="1505526881131" duration="30466000" />
+      <workItem from="1505606032090" duration="24000" />
+      <workItem from="1505613755771" duration="8089000" />
+      <workItem from="1505701506677" duration="17726000" />
+      <workItem from="1505781988473" duration="40148000" />
+      <workItem from="1505874959215" duration="32782000" />
+      <workItem from="1505955105762" duration="2469000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="147777000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1600" height="860" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20643939" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/PHP/BuroPFImpl.php" />
+    <entry file="file://$PROJECT_DIR$/PHP/BuroPFAutenticador.php" />
+    <entry file="file://$PROJECT_DIR$/Buro/Buro.java" />
+    <entry file="file://$PROJECT_DIR$/Buro/.env.example">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/config/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHP/Buro.php" />
+    <entry file="file://$PROJECT_DIR$/Buro/vendor/symfony/routing/Route.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="23" column="56" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/routes/console.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/routes/channels.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/artisan">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/readme.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/app/Http/Controllers/Util.php" />
+    <entry file="file://$PROJECT_DIR$/Java/BuroPFAutenticador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java/BuroPMImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="3070" column="44" selection-start-line="3070" selection-start-column="19" selection-end-line="3070" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java/Valores.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java/INTFLectura.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/app/Providers/AuthServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/app/Providers/EventServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/app/Providers/RouteServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-290">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java/INTFConsulta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/bootstrap/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java/BuroPFImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="58" column="31" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/storage/logs/laravel.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/bootstrap/constants.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/app/Http/Controllers/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/app/Http/Controllers/INTFConsultaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3192">
+          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/app/Http/Controllers/INTFLecturaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4151">
+          <caret line="596" column="54" selection-start-line="596" selection-start-column="54" selection-end-line="596" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/resources/assets/js/components/Example.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/resources/assets/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/resources/views/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/resources/assets/sass/_variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/resources/assets/sass/app.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/resources/assets/js/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="45" column="34" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/public/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="2599" selection-start-line="0" selection-start-column="2599" selection-end-line="0" selection-end-column="2599" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/public/css/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-782">
+          <caret line="4" column="1919" selection-start-line="4" selection-start-column="1919" selection-end-line="4" selection-end-column="1919" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/resources/views/layouts/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/resources/views/includes/header.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/public/js/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
+          <folding>
+            <marker date="1505833513464" expanded="true" signature="945:963" placeholder="..." />
+            <marker date="1505833513464" expanded="true" signature="1088:1106" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/resources/views/includes/footer.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/resources/views/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java/Buro.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="57" column="16" selection-start-line="56" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/app/Http/Controllers/BuroController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3060">
+          <caret line="189" column="13" selection-start-line="189" selection-start-column="13" selection-end-line="189" selection-end-column="13" />
+          <folding>
+            <element signature="e#40#76#0#PHP" expanded="true" />
+            <marker date="1505834527693" expanded="true" signature="455:475" placeholder="select * fro... paises" />
+            <marker date="1505834527693" expanded="true" signature="455:477" placeholder="select * fro... paises" />
+            <marker date="1505834527693" expanded="true" signature="2216:2264" placeholder="SELECT t_per... solicitante" />
+            <marker date="1505834527693" expanded="true" signature="6046:6090" placeholder="select * fro... users" />
+            <marker date="1505834527693" expanded="true" signature="6217:6286" placeholder="select coale... cat_resultado" />
+            <marker date="1505834527693" expanded="true" signature="6217:6287" placeholder="select coale... cat_resultado" />
+            <marker date="1505834527693" expanded="true" signature="7029:7101" placeholder="SELECT COUNT... consultas_circulo" />
+            <marker date="1505834527693" expanded="true" signature="7029:7116" placeholder="SELECT COUNT... consultas_circulo" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/app/Http/Controllers/BuroPFImplController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25075">
+          <caret line="1481" column="0" selection-start-line="1481" selection-start-column="0" selection-end-line="1481" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#76#0#PHP" expanded="true" />
+            <marker date="1505811481216" expanded="true" signature="975:1068" placeholder="select usuar... cat_empresas" />
+            <marker date="1505811481216" expanded="true" signature="3023:3314" placeholder="..." />
+            <marker date="1505811481216" expanded="true" signature="3159:3295" placeholder="..." />
+            <marker date="1505811481216" expanded="true" signature="3340:3629" placeholder="..." />
+            <marker date="1505811481216" expanded="true" signature="3362:3608" placeholder="//..." />
+            <marker date="1505811481216" expanded="true" signature="4208:4244" placeholder="//..." />
+            <marker date="1505811481216" expanded="true" signature="5397:5463" placeholder="select respu... consultas_circulo" />
+            <marker date="1505811481216" expanded="true" signature="5397:5478" placeholder="select respu... consultas_circulo" />
+            <marker date="1505811481216" expanded="true" signature="5524:5583" placeholder="Delete from " />
+            <marker date="1505811481216" expanded="true" signature="5524:5584" placeholder="Delete from " />
+            <marker date="1505811481216" expanded="true" signature="5633:5694" placeholder="Delete from " />
+            <marker date="1505811481216" expanded="true" signature="5633:5695" placeholder="Delete from " />
+            <marker date="1505811481216" expanded="true" signature="5744:5802" placeholder="Delete from " />
+            <marker date="1505811481216" expanded="true" signature="5744:5803" placeholder="Delete from " />
+            <marker date="1505811481216" expanded="true" signature="5852:5910" placeholder="Delete from " />
+            <marker date="1505811481216" expanded="true" signature="5852:5911" placeholder="Delete from " />
+            <marker date="1505811481216" expanded="true" signature="5960:6032" placeholder="Delete from " />
+            <marker date="1505811481216" expanded="true" signature="5960:6033" placeholder="Delete from " />
+            <marker date="1505811481216" expanded="true" signature="10811:10839" placeholder="//..." />
+            <marker date="1505811481216" expanded="true" signature="10958:10996" placeholder="Update consu... " />
+            <marker date="1505811481216" expanded="true" signature="10958:11069" placeholder="Update consu... " />
+            <marker date="1505811481216" expanded="true" signature="11184:11198" placeholder="//..." />
+            <marker date="1505811481216" expanded="true" signature="11334:11374" placeholder="Update consu... " />
+            <marker date="1505811481216" expanded="true" signature="11334:11476" placeholder="Update consu... " />
+            <marker date="1505811481216" expanded="true" signature="11646:11660" placeholder="//..." />
+            <marker date="1505811481216" expanded="true" signature="11891:11905" placeholder="//..." />
+            <marker date="1505811481216" expanded="true" signature="12476:12490" placeholder="//..." />
+            <marker date="1505811481216" expanded="true" signature="12703:12973" placeholder="Insert into consultas_circulo... " />
+            <marker date="1505811481216" expanded="true" signature="12703:13328" placeholder="Insert into consultas_circulo... " />
+            <marker date="1505811481216" expanded="true" signature="13466:13480" placeholder="//..." />
+            <marker date="1505811481216" expanded="true" signature="14886:14954" placeholder="select coale... cat_creditos" />
+            <marker date="1505811481216" expanded="true" signature="16263:16277" placeholder="//..." />
+            <marker date="1505811481216" expanded="true" signature="16564:16579" placeholder="//..." />
+            <marker date="1505811481216" expanded="true" signature="16932:16946" placeholder="//..." />
+            <marker date="1505811481216" expanded="true" signature="17383:17397" placeholder="//..." />
+            <marker date="1505811481216" expanded="true" signature="20628:20742" placeholder="Insert into circulo_personas... " />
+            <marker date="1505811481216" expanded="true" signature="23662:23845" placeholder="Insert into circulo_domicilios... " />
+            <marker date="1505811481216" expanded="true" signature="23662:24031" placeholder="Insert into circulo_domicilios... " />
+            <marker date="1505811481216" expanded="true" signature="24172:24186" placeholder="//..." />
+            <marker date="1505811481216" expanded="true" signature="27316:27535" placeholder="Insert into circulo_empleos... " />
+            <marker date="1505811481216" expanded="true" signature="27316:27786" placeholder="Insert into circulo_empleos... " />
+            <marker date="1505811481216" expanded="true" signature="27958:27972" placeholder="//..." />
+            <marker date="1505811481216" expanded="true" signature="28168:28387" placeholder="Insert into circulo_empleos... " />
+            <marker date="1505811481216" expanded="true" signature="28168:28646" placeholder="Insert into circulo_empleos... " />
+            <marker date="1505811481216" expanded="true" signature="28808:28822" placeholder="//..." />
+            <marker date="1505811481216" expanded="true" signature="48840:48963" placeholder="Insert into Circulo_cuentas... " />
+            <marker date="1505811481216" expanded="true" signature="48840:50042" placeholder="Insert into Circulo_cuentas... " />
+            <marker date="1505811481216" expanded="true" signature="50172:50186" placeholder="//..." />
+            <marker date="1505811481216" expanded="true" signature="57186:57378" placeholder="Insert into circulo_consultas_efectuadas... " />
+            <marker date="1505811481216" expanded="true" signature="57186:57537" placeholder="Insert into circulo_consultas_efectuadas... " />
+            <marker date="1505811481216" expanded="true" signature="57693:57707" placeholder="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buro/app/Http/Controllers/BuroPMImplController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="2698" column="16" selection-start-line="2698" selection-start-column="16" selection-end-line="2698" selection-end-column="16" />
+          <folding>
+            <marker date="1505817710642" expanded="true" signature="4807:4873" placeholder="SELECT respu... consultas_circulo" />
+            <marker date="1505817710642" expanded="true" signature="4807:4889" placeholder="SELECT respu... consultas_circulo" />
+            <marker date="1505817710642" expanded="true" signature="15491:15620" placeholder="INSERT INTO buro_consultapm_hd... " />
+            <marker date="1505817710642" expanded="true" signature="17505:17598" placeholder="INSERT INTO buro_consultapm_em... " />
+            <marker date="1505817710642" expanded="true" signature="17505:17974" placeholder="INSERT INTO buro_consultapm_em... " />
+            <marker date="1505817710642" expanded="true" signature="17505:18386" placeholder="INSERT INTO buro_consultapm_em... " />
+            <marker date="1505817710642" expanded="true" signature="17505:18484" placeholder="INSERT INTO buro_consultapm_em... " />
+            <marker date="1505817710642" expanded="true" signature="26922:27052" placeholder="INSERT INTO buro_consultapm_hc... " />
+            <marker date="1505817710642" expanded="true" signature="28824:28959" placeholder="INSERT INTO buro_consultapm_hr... " />
+            <marker date="1505817710642" expanded="true" signature="30727:30846" placeholder="INSERT INTO buro_consultapm_dc... " />
+            <marker date="1505817710642" expanded="true" signature="30727:31096" placeholder="INSERT INTO buro_consultapm_dc... " />
+            <marker date="1505817710642" expanded="true" signature="30727:31237" placeholder="INSERT INTO buro_consultapm_dc... " />
+            <marker date="1505817710642" expanded="true" signature="37140:37243" placeholder="INSERT INTO buro_consultapm_ac... " />
+            <marker date="1505817710642" expanded="true" signature="37140:37506" placeholder="INSERT INTO buro_consultapm_ac... " />
+            <marker date="1505817710642" expanded="true" signature="42296:42399" placeholder="INSERT INTO buro_consultapm_cr... " />
+            <marker date="1505817710642" expanded="true" signature="42296:42521" placeholder="INSERT INTO buro_consultapm_cr... " />
+            <marker date="1505817710642" expanded="true" signature="42296:42639" placeholder="INSERT INTO buro_consultapm_cr... " />
+            <marker date="1505817710642" expanded="true" signature="42296:43055" placeholder="INSERT INTO buro_consultapm_cr... " />
+            <marker date="1505817710642" expanded="true" signature="51405:51519" placeholder="INSERT INTO buro_consultapm_hi... " />
+            <marker date="1505817710642" expanded="true" signature="51405:51673" placeholder="INSERT INTO buro_consultapm_hi... " />
+            <marker date="1505817710642" expanded="true" signature="55377:55479" placeholder="INSERT INTO buro_consultapm_co... " />
+            <marker date="1505817710642" expanded="true" signature="55377:55795" placeholder="INSERT INTO buro_consultapm_co... " />
+            <marker date="1505817710642" expanded="true" signature="59597:59733" placeholder="INSERT INTO buro_consultapm_fd... " />
+            <marker date="1505817710642" expanded="true" signature="61567:61687" placeholder="INSERT INTO buro_consultapm_cn... " />
+            <marker date="1505817710642" expanded="true" signature="63282:63395" placeholder="INSERT INTO buro_consultapm_er... " />
+            <marker date="1505817710642" expanded="true" signature="63282:63562" placeholder="INSERT INTO buro_consultapm_er... " />
+            <marker date="1505817710642" expanded="true" signature="66695:66793" placeholder="INSERT INTO buro_consultapm_ci... " />
+            <marker date="1505817710642" expanded="true" signature="74140:74417" placeholder="Insert into consultas_circulo... " />
+            <marker date="1505817710642" expanded="true" signature="74140:74635" placeholder="Insert into consultas_circulo... " />
+            <marker date="1505817710642" expanded="true" signature="74140:74683" placeholder="Insert into consultas_circulo... " />
+            <marker date="1505817710642" expanded="true" signature="74140:74705" placeholder="Insert into consultas_circulo... " />
+            <marker date="1505817710642" expanded="true" signature="74140:74743" placeholder="Insert into consultas_circulo... " />
+            <marker date="1505817710642" expanded="true" signature="74140:74807" placeholder="Insert into consultas_circulo... " />
+            <marker date="1505817710642" expanded="true" signature="75158:75196" placeholder="Update consu... " />
+            <marker date="1505817710642" expanded="true" signature="75158:75306" placeholder="Update consu... " />
+            <marker date="1505817710642" expanded="true" signature="75343:75470" placeholder="Update consu... " />
+            <marker date="1505817710642" expanded="true" signature="75343:75580" placeholder="Update consu... " />
+            <marker date="1505817710642" expanded="true" signature="75693:75791" placeholder="Update consu... " />
+            <marker date="1505817710642" expanded="true" signature="75693:75792" placeholder="Update consu... " />
+            <marker date="1505817710642" expanded="true" signature="76089:76174" placeholder="select 1 fro... pg_class" />
+            <marker date="1505817710642" expanded="true" signature="80792:80906" placeholder="Insert into circulo_personas... " />
+            <marker date="1505817710642" expanded="true" signature="80792:81009" placeholder="Insert into circulo_personas... " />
+            <marker date="1505817710642" expanded="true" signature="82795:82907" placeholder="Insert into circulo_domicilios... " />
+            <marker date="1505817710642" expanded="true" signature="82795:82988" placeholder="Insert into circulo_domicilios... " />
+            <marker date="1505817710642" expanded="true" signature="84688:84811" placeholder="Insert into circulo_cuentas... " />
+            <marker date="1505817710642" expanded="true" signature="84688:85063" placeholder="Insert into circulo_cuentas... " />
+            <marker date="1505817710642" expanded="true" signature="84688:85284" placeholder="Insert into circulo_cuentas... " />
+            <marker date="1505817710642" expanded="true" signature="89821:89933" placeholder="Insert into circulo_consultas_efectuadas... " />
+            <marker date="1505817710642" expanded="true" signature="89821:90023" placeholder="Insert into circulo_consultas_efectuadas... " />
+            <marker date="1505817710642" expanded="true" signature="91821:91880" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="91821:91881" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="91945:92006" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="91945:92007" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="92081:92139" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="92081:92140" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="92214:92272" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="92214:92273" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="92347:92418" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="92347:92419" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="92524:92577" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="92524:92578" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="92636:92689" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="92636:92690" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="92749:92802" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="92749:92803" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="92862:92915" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="92862:92916" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="92971:93024" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="92971:93025" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="93084:93137" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="93084:93138" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="93197:93250" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="93197:93251" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="93311:93364" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="93311:93365" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="93424:93477" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="93424:93478" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="93537:93590" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="93537:93591" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="93649:93702" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="93649:93703" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="93761:93814" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="93761:93815" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="93869:93922" placeholder="DELETE FROM " />
+            <marker date="1505817710642" expanded="true" signature="93869:93923" placeholder="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
