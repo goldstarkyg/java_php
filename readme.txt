@@ -1,3 +1,4 @@
+--PostGreSQL command
 ----install database  in windows
 more  E:\work\JavaToPhp\Mexico\second\giro.sql
 psql -U postgres giro < E:\work\JavaToPhp\Mexico\second\giro.sql
